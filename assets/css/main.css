@@ -72,6 +72,13 @@ input, select, textarea {
 	appearance: none;
 }
 
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+
 /* Basic */
 
 	@-ms-viewport {
