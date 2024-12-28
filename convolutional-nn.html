@@ -55,22 +55,21 @@
 							<p>In this formative assignment, I used the code provided in Unit 9, Machine Learning module, and applied changes in order to analyze another set (CIFAR-100). 
 							The difference between the initial set CIFAR-10 and newly implemented CIFAR-100 is the number of classes --  10 and 100, respectively. </p>
 							<p></p>
-							<iframe src="https://nbviewer.org/github/eo-mateo/uoe-ai/blob/main/MN_edit_Unit09_Ex1_Convolutional_Neural_Networks_(CNN)_Object_Recognition.ipynb" width="800" height="600"></iframe>
-							<p><a href="assets/K-means clustering.ipynb">See the code with commentary and outcomes.</a></p>
-							<p> Despite the significant growth in the classes number, the number of parameters  Total params: 225,610 (881.29 KB)
- Trainable params: 225,610 (881.29 KB)
- Non-trainable params: 0 (0.00 B) </p>
-							<img src="images/k-means iter0 k3.png" alt="" />
-							<img src="images/k-means iter14 k3.png" alt="" /><br>
-							Due to a lucky random starting points sampling, there was no much efforts left to perform. 
-							Still, the program was able to balance the numbers of points between two lower sets.<p></p>
-							<img src="images/k-means iter0 k4.png" alt="" />
-							<img src="images/k-means iter14 k4.png" alt="" /><br>
-							In this example where K=4, the algorithm faced some more complicated starting give-away, however also demonstrated an ability to balance between two neighbouring sets.<p></p>
-							<img src="images/k-means iter0 minimum.png" alt="" />
-							<img src="images/k-means iter14 minimum.png" alt="" /><br>
-							Another example illustrates the shortcoming of the simplest version of K-means algoritm: getting stuck in local minumum. When two, roughly equivalent group of points try to "tug-of-war" the center of mass point, it oscillates there-and-back-again never resulting in a dominace of any part. Below, we can see the status after another 3x more time (60 iteration) with clearly no further advances. 
-							<img src="images/k-means iter59 minimum.png" alt="" /><br>
+							<iframe src="https://nbviewer.org/github/eo-mateo/uoe-ai/MN_edit_Unit09_Ex1_Convolutional_Neural_Networks_(CNN)_Object_Recognition.ipynb" width="800" height="600"></iframe>
+							<p><a href="MN_edit_Unit09_Ex1_Convolutional_Neural_Networks_(CNN)_Object_Recognition.ipynb">See the code with commentary and outcomes.</a></p>
+							<p> In the first step, as previous network hyperparameters remained unchanged, with the increase of classes 
+								we obviously observe a significant drop in model accuracy (63% to 30%).  
+							<img src="images/acccuracy-v1.png" alt="" /><br>
+							<img src="images/model-network-v1.png" alt="" /><br>
+							This forces us to reshape the networks architecture: increasing a number of neurons in hidden layer (from 256 to 350) as well as doubling the layer itself.  
+							However, the obtained results do not meet any acceptable level.
+							<img src="images/accuracy-v2.png" alt="" />
+							<img src="images/model-network-v2.png" alt="" /><br>
+							And for another round:
+							<img src="images/accuracy-v3.png" alt="" />
+							<img src="images/model-network-v3.png" alt="" /><br>
+
+
 						</div>
 					</div>
 
