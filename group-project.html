@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Code - Group project on ML model building</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Mateusz Niewczas portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Unit 4. Group project on ML model building</h1>
+							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+							<p>In Unit 4 we were tasked with the analysis of the dataset of New York City's AirB'n'B properties listed from 2011 to 2019. The groups of students first had to propose an
+              appropriate research issue, and then profoundly examine it and deliver well-described results. My role in the group of 5 was to propose our initial approach to machine learning
+              model and to perform needed preliminar calulations in order to check the plausability of the taken path. (I based on a few initial lines of code provided by other team member.)  </p>
+							<p>After careful consideration, we decided to reconstruct from the very limited, aggregated data from 2023 - the number of active and inactive properties
+from each subsequent year from 2011-2019 timeframe. The task was outstandingly difficult, for the provided data did not encompass such direct indication or parameters. </p>
+							<iframe src="https://nbviewer.org/github/eo-mateo/uoe-ai/Group_projectU4.ipynb" width="800" height="600"></iframe>
+							<p><a href="Group_projectU4.ipynb.ipynb">See the code with commentary and outcomes.</a></p>
+							<p> As the basic set was limited only to 16 columns, with no direct data on the subject, we had to apply
+deeper feature engineering to derive needed information. This can be deduced using "last_review" - returning a time of when the property was review by the guest
+last time. The assumption applied here, straightforwardly obvious, is that when the property is not reviewed for a year, that means it no longer in use.
+Therefore, "last_review" limited only to the year, directly conveyed the information of the last denoted year of activity (excluding 2019). Having this information drawn,
+we could see the rising trend of inactive properties in the set. However, 2019 towered above the preceding values, because it stood for both active
+and inactive (of unknown proportion) properties as the last recorded year.
+Briefly, the task might be divided into 3 steps:
+     1. Predicting the number of inactive properties in 2019 basing on the trend from 2011-2018
+     2. Calculating the 'inactives to all properties' ratio in 2019
+     3. Propagating back the obtained ratio from pt.2 for years 2011-2018 in order to get the number of total listed properties
+Note: step 3 requires another assumption: that the inactives to all properties' ratio in constant over time and applyable to years 2011-2018. For several following
+reasons we find this assumption plausible for the sake of this analysis: a) we took advantage of the given timeframe: relative stable economy,
+no global war or turmoils, real estate market recovered after 2008 crisis, yet not affected by upcoming COVID-19 effect; b) the analysis is based on a very limited
+scope, and our goal is to make use of the data as it is -- with the uncertainty of the obtained outcomes properly pointed out;  presumably the management of AirBnB
+after fiding the results promising, could provide a deeper dataset that will not require applying these assumptions.</p>
+              <h3>Step 1. Predicting the number of inactive properties in 2019 basing on the trend from 2011-2018</h3>
+              <p>In order to create and adjust optimal curve following given data points. Fortunately, after visual examination
+ most likely it is a low-degree polynomial. We decided to use a 3rd degree polynomial as a candidate function and use least square method to callibrate its parameters.
+ Our model function: 3rd degree polynomial f(x)=ax^3+bx^2+cx+d. After finding the most fitting model, we draw the curve and the historical points to double-check whether 
+                it visually follows them.</p>             
+							
+							<img src="images/gp1.png" alt="" /><br>
+							<p>Function equation: 
+ <b>f(year) =  10.7 *x^3+ 62.74 *x^2+ -129.97 *x+ 10.71</b></p>
+              <h3>Step 2.Calculating the 'inactives to all properties' ratio in 2019</h3>
+              Prediction for 2019:  <b>8465.5</b><br>
+Inactive to active properties ratio:  <b>0.34</b><br>
+
+<p>Covariance matrix or errors:<br><br>
+
+[[    300.53575774   -3155.62498626    8264.72923972   -3155.61636831]<br>
+ [  -3155.62498626   34196.6678422   -94217.9191353    40572.24397097]<br>
+ [   8264.72923972  -94217.9191353   283598.32736972 -153723.91843695]<br>
+ [  -3155.61636831   40572.24397097 -153723.91843695  159584.56180573]]<br>
+</p>
+<b>R^2= 0.9783040040715334</b>
+
+              <p>And hence, we draw the results of predicted value of inactive properties in 2019:</p>
+							<img src="images/gp2.png" alt="" />
+<h3>Step 3. Propagating back the obtained ratio from pt.2 for years 2011-2018 in order to get the number of total listed properties</h3>
+
+              
+							<img src="images/gp3.png" alt="" /><br>
+							
+
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Mateusz Niewczas portfolio. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
