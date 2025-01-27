@@ -69,7 +69,7 @@
 							<img src="images/ms/v1.png" alt="" />
              						<p>Another kernel - rbf - also doen not show any progress in AUC:</p>
 							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="rbf", probability=True, random_state=random_state))</i></center></p>
-							<img src="images/ms/v4.png" alt="" />
+							<img src="images/ms/v3.png" alt="" />
              						<p>However, the next modification in kernel - to polynomial - gave much more significant impact on the result (AUC=0.86):</p>
 							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state))</i></center></p>
 							<img src="images/ms/v2.png" alt="" />		
@@ -85,6 +85,9 @@
 							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, degree=4))</i></center></p>
 							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, degree=5))</i></center></p>
 							<img src="images/ms/v2.3.png" alt="" />	<img src="images/ms/v2.4.png" alt="" />	
+							<p>To summarize this part, from many tested variants, the most optimal kernel type for the task is 3rd degree polynomial.</p>
+							<p></p>
+							<p>Second part of the task was to analyze the behaviour of R^2</p>
 						</div>
 					</div>
 
