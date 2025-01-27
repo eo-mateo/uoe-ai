@@ -61,45 +61,47 @@ Utilising the Airbnb NYC dataset and machine learning models to predict growth t
 Methodology:
 
 <h3>2.1. Methodology Overview</h3>
-This study used a systematic approach, combining data cleaning, exploratory data analysis (EDA), and predictive modelling. Python was the primary tool with libraries for data manipulation, visualisation, and machine learning.
+<p></p>This study used a systematic approach, combining data cleaning, exploratory data analysis (EDA), and predictive modelling. Python was the primary tool with libraries for data manipulation, visualisation, and machine learning.
 <h3>2.2 Data Collection and Preprocessing</h3>
-The dataset was sourced from a publicly available Airbnb repository. Key variables included room_type, price, latitude, longitude, and number_of_reviews. 
+<p></p>The dataset was sourced from a publicly available Airbnb repository. Key variables included room_type, price, latitude, longitude, and number_of_reviews. 
 
-The preprocessing phase focused on data cleaning to address inconsistencies and missing entries. Null values were imputed, missing categorical data was replaced or flagged, and outliers and faulty data were removed. These steps were applied to all numerical columns. 
+<p></p>The preprocessing phase focused on data cleaning to address inconsistencies and missing entries. Null values were imputed, missing categorical data was replaced or flagged, and outliers and faulty data were removed. These steps were applied to all numerical columns. 
 <h3>2.3 Exploratory Data Analysis (EDA)</h3>
-EDA uncovered patterns and relationships within the dataset. Statistical summaries provided an overview of key metrics, while visualisations such as histograms, scatterplots, and box plots highlighted trends and anomalies. The distributions of numerical variables, including price and availability, were examined in detail, while scatterplots of latitude and longitude revealed spatial trends. Additionally, categorical analysis explored room type distributions, and host behaviour. Likewise, all numerical columns were cleansed of outliers and faulty data.
+<p></p>EDA uncovered patterns and relationships within the dataset. Statistical summaries provided an overview of key metrics, while visualisations such as histograms, scatterplots, and box plots highlighted trends and anomalies. The distributions of numerical variables, including price and availability, were examined in detail, while scatterplots of latitude and longitude revealed spatial trends. Additionally, categorical analysis explored room type distributions, and host behaviour. Likewise, all numerical columns were cleansed of outliers and faulty data.
 <h3>2.4 Analytical and Modelling Techniques</h3>
-Key analytical methods included outlier detection with box plots, trend analysis using correlation coefficients, and neighbourhood grouping for average prices. These techniques helped identify premium and affordable areas while providing insights into market dynamics. The 2019 dataset, with the highest number of properties, contained both active and inactive listings. Historical data (2011–2018) on inactive properties guided a polynomial model, optimised with RMSE, to predict inactive properties in 2019. Subtracting these predictions from total listings refined the dataset. Feature engineering used Scikit-learn’s PolynomialFeatures, and performance was evaluated using MAE, MSE, and R².
+<p></p>Key analytical methods included outlier detection with box plots, trend analysis using correlation coefficients, and neighbourhood grouping for average prices. These techniques helped identify premium and affordable areas while providing insights into market dynamics. The 2019 dataset, with the highest number of properties, contained both active and inactive listings. Historical data (2011–2018) on inactive properties guided a polynomial model, optimised with RMSE, to predict inactive properties in 2019. Subtracting these predictions from total listings refined the dataset. Feature engineering used Scikit-learn’s PolynomialFeatures, and performance was evaluated using MAE, MSE, and R².
 </p>             
 							
-							<img src="images/gpm1.png" alt="" /><br>
+							<p></p><img src="images/gpm1.png" alt="" /><br>
 <h3>2.5 Tools and Technologies</h3>
-In addition to Python, Pandas was used for data manipulation, while NumPy facilitated numerical calculations. Visualisations were created with Seaborn and Matplotlib, and Scikit-learn was employed for modelling tasks. All analysis was conducted within the Jupyter Notebook environment, ensuring an interactive and iterative workflow.
+<p></p>In addition to Python, Pandas was used for data manipulation, while NumPy facilitated numerical calculations. Visualisations were created with Seaborn and Matplotlib, and Scikit-learn was employed for modelling tasks. All analysis was conducted within the Jupyter Notebook environment, ensuring an interactive and iterative workflow.
 
 <h3>3. Findings:</h3> 
 <h3>3.1 Property Types Reflect Neighborhood Trends Across NYC</h3>
-Our data analysis aligns with Sarkar et al.'s (2020) research on the spatial and socio-economic factors influencing Airbnb hosting in NYC. Northern Brooklyn and Manhattan, as moderately to highly dense areas, stand out as key hubs of activity, marked by high review counts and property types that attract both tourists and locals. 
-<img src="images/gpm2.png" alt="" /><br>
+<p></p>Our data analysis aligns with Sarkar et al.'s (2020) research on the spatial and socio-economic factors influencing Airbnb hosting in NYC. Northern Brooklyn and Manhattan, as moderately to highly dense areas, stand out as key hubs of activity, marked by high review counts and property types that attract both tourists and locals. 
+<p></p><img src="images/gpm2.png" alt="" /><br>
               Moreover, the popularity of property types is closely tied to the unique characteristics and appeal of different neighbourhoods. Entire homes are prevalent in family-oriented areas like Brooklyn and highly tourist-friendly Manhattan. Private rooms dominate in culturally vibrant and budget-conscious neighbourhoods like northern Brooklyn and Upper Manhattan. Shared rooms, while less common, are typically found in Upper Manhattan, where affordability plays a significant role.
-<img src="images/gpm3.png" alt="" /><br>
-<img src="images/gpm4.png" alt="" /><br>
+<p></p><img src="images/gpm3.png" alt="" /><br>
+<p></p><img src="images/gpm4.png" alt="" /><br>
              <h3>3.2 Price Trends by Neighbourhood</h3> 
-<img src="images/gpm5.png" alt="" /><br>
-              Table 1 shows that Staten Island has some of the highest-priced properties in NYC, though it’s generally not more expensive than Manhattan (Bentley, 2024). With a mix of affluent and modest areas, the borough offers suburban charm alongside urban amenities. According to Bentley (2024), neighbourhoods like Greenwich Village, SoHo, and Sutton Place are among the priciest for Airbnb rentals. A 2019 dataset reveals Manhattan has the highest average nightly rate at $180, followed by Brooklyn ($121), Queens ($96), and Staten Island ($90) (NYC_AirBNB_Data, 2021; Sudhakar, 2020).
+<p></p><img src="images/gpm5.png" alt="" /><br>
+<p></p>Table 1 shows that Staten Island has some of the highest-priced properties in NYC, though it’s generally not more expensive than Manhattan (Bentley, 2024). With a mix of affluent and modest areas, the borough offers suburban charm alongside urban amenities. According to Bentley (2024), neighbourhoods like Greenwich Village, SoHo, and Sutton Place are among the priciest for Airbnb rentals. A 2019 dataset reveals Manhattan has the highest average nightly rate at $180, followed by Brooklyn ($121), Queens ($96), and Staten Island ($90) (NYC_AirBNB_Data, 2021; Sudhakar, 2020).
 Staten Island's higher prices in the dataset may be due to sampling bias, with luxury or unique listings inflating averages. Seasonal pricing, misclassification, or data cleaning errors could also distort results, potentially underrepresenting Manhattan's true average. Real-world data consistently shows Manhattan as the most expensive borough, with an average nightly rate of $180 (Bentley, 2024; NYC_AirBNB_Data, 2021). Figure 4 supports this trend.
-<img src="images/gpm6.png" alt="" /><br>
-              <img src="images/gpm7.png" alt="" /><br>
-Figure 6 shows that entire homes on Airbnb are typically more expensive than private or shared rooms, reflecting their full privacy and amenities. Entire homes are ideal for families or groups, while private rooms, with shared common areas, attract solo travellers and couples. Shared rooms are the most affordable, catering to budget-conscious guests. These trends align with market demand, with entire homes more common in tourist areas and private rooms in urban settings (Airbnb, 2024).
-<img src="images/gpm8.png" alt="" /><br>
-              Figure 7 shows a concentration of properties around $300 per night in Manhattan, northern Brooklyn, and northwestern Queens. Despite Forest Hills being the priciest area in Queens (Keeling, 2024), the abundance of high-priced listings in the northwestern region is due to its proximity to Manhattan, offering affordable alternatives. Astoria and Long Island City are popular for their vibrant atmospheres, transit access, and proximity to LaGuardia Airport, making them attractive to travellers and renters (McNeil, 2023).
+<p></p><img src="images/gpm6.png" alt="" /><br>
+<p></p><img src="images/gpm7.png" alt="" /><br>
+<p></p>Figure 6 shows that entire homes on Airbnb are typically more expensive than private or shared rooms, reflecting their full privacy and amenities. Entire homes are ideal for families or groups, while private rooms, with shared common areas, attract solo travellers and couples. Shared rooms are the most affordable, catering to budget-conscious guests. These trends align with market demand, with entire homes more common in tourist areas and private rooms in urban settings (Airbnb, 2024).
+<p></p><img src="images/gpm8.png" alt="" /><br>
+<p></p>Figure 7 shows a concentration of properties around $300 per night in Manhattan, northern Brooklyn, and northwestern Queens. Despite Forest Hills being the priciest area in Queens (Keeling, 2024), the abundance of high-priced listings in the northwestern region is due to its proximity to Manhattan, offering affordable alternatives. Astoria and Long Island City are popular for their vibrant atmospheres, transit access, and proximity to LaGuardia Airport, making them attractive to travellers and renters (McNeil, 2023).
 
 <h3>4. Conclusion and Recommendations</h3>
-The 2019 predictions for Airbnb active listings in New York City, generated through machine learning, revealed key trends across boroughs. Entire homes are expected to remain the most expensive option, dominating tourist-heavy areas like Manhattan and Brooklyn due to the demand for privacy and amenities. Private rooms are predicted to be prevalent in budget-friendly, culturally rich neighbourhoods, while shared rooms will likely attract cost-conscious travellers. The results highlighted a decrease in predicted inactive properties and a shift in market dynamics, emphasising growth in certain boroughs.
+<p></p>The 2019 predictions for Airbnb active listings in New York City, generated through machine learning, revealed key trends across boroughs. Entire homes are expected to remain the most expensive option, dominating tourist-heavy areas like Manhattan and Brooklyn due to the demand for privacy and amenities. Private rooms are predicted to be prevalent in budget-friendly, culturally rich neighbourhoods, while shared rooms will likely attract cost-conscious travellers. The results highlighted a decrease in predicted inactive properties and a shift in market dynamics, emphasising growth in certain boroughs.
 <h3>Recommendations:</h3>
-Dynamic Pricing: Adjust pricing models based on borough-specific trends and property types.
-Targeted Marketing: Focus promotional efforts in growth areas such as northern Brooklyn and Queens.
-Data Management: Continuously update datasets to reflect seasonal changes, outliers, and inactive listings.
-Customer Experience: Enhance features in private rooms to attract solo travellers and couples.
+<ul>
+<ui>Dynamic Pricing: Adjust pricing models based on borough-specific trends and property types.</ui>
+<ui>Targeted Marketing: Focus promotional efforts in growth areas such as northern Brooklyn and Queens.</ui>
+<ui>Data Management: Continuously update datasets to reflect seasonal changes, outliers, and inactive listings.</ui>
+<ui>Customer Experience: Enhance features in private rooms to attract solo travellers and couples.	</ui>
+</ul>
 <h3>References</h3>
 <p>Airbnb (2024). Airbnb categories - Airbnb Help Center. [online] Airbnb. Available at: https://www.airbnb.com/help/article/3374.</p>
 <p>Bentley, A. (2024). 12 Most Expensive Neighborhoods in New York City to Rent in 2024. [online] Apartment Living Tips - Apartment Tips from ApartmentGuide.com. Available at: https://www.apartmentguide.com/blog/most-expensive-neighborhoods-new-york-ny/ [Accessed 27 Nov. 2024].</p>
