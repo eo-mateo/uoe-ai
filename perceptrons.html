@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Code - Perceptron activities</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Mateusz Niewczas portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Unit 7. Perceptron Activities</h1>
+							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+							<p>As a formative activity in Unit 7, three different Google Colab notebooks were shared: each with different excercise to follow.</p>
+							<p></p>
+							<h2>Excercise 1. Simple perceptron</h2>
+							<iframe src="https://nbviewer.org/github/eo-mateo/uoe-ai/blob/main/perceptron1.ipynb" width="800" height="600"></iframe>
+							<p><a href="perceptron1.ipynb">See the excercise 1. code with commentary and outcomes.</a></p>
+							<p>Perceptron is a single processing unit acting like single biological neuron. In the beginning, two inputs and two weights were declared. As a first step to create a perceptron,
+                weight - input pair must be multiplied and added to another pair. This was called "a sum" in the excercise. <p></p>Secondcly, a "step" function was implemented with the use of simple
+              "if" block. Combination of two gives a perceptron outcome. In the first example, two cases were presented: positive and negative weights.
+              </p>
+              <iframe src="https://nbviewer.org/github/eo-mateo/uoe-ai/blob/main/perceptron2.ipynb" width="800" height="600"></iframe>
+							<p><a href="perceptron2.ipynb">See the excercise 2. code with commentary and outcomes.</a></p>
+							<p>Perceptron is a single processing unit acting like single biological neuron. In the beginning, two inputs and two weights were declared. As a first step to create a perceptron,
+                weight - input pair must be multiplied and added to another pair. This was called "a sum" in the excercise. <p></p>Secondcly, a "step" function was implemented with the use of simple
+              "if" block. Combination of two gives a perceptron outcome. In the first example, two cases were presented: positive and negative weights.
+              </p>
+              
+							<img src="images/ms/v0.png" alt="" />
+             						<p>After changing the kernel from linear to sigmoid, the difference is barely noticable:</p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="sigmoid", probability=True, random_state=random_state))</i></center></p>
+							<img src="images/ms/v1.png" alt="" />
+             						<p>Another kernel - rbf - also doen not show any progress in AUC:</p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="rbf", probability=True, random_state=random_state))</i></center></p>
+							<img src="images/ms/v3.png" alt="" />
+             						<p>However, the next modification in kernel - to polynomial - gave much more significant impact on the result (AUC=0.86):</p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state))</i></center></p>
+							<img src="images/ms/v2.png" alt="" />		
+             						<p>Following this path, I kept the promising kernel type, and continued to improve its quality by adding new parameters, starting with class_weight.
+							This aprroach, however, did not bring any improvements. (AUC=0.85)</p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, class_weight="balanced"))</i></center></p>
+							<img src="images/ms/v2.1.png" alt="" />	
+							<p>Similarly did another modifications: </p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, gamma="auto"))</i></center></p>
+							<img src="images/ms/v2.2.png" alt="" />
+							<p>As the default option for polymonimal is using 3rd degree, I decided to try higher degrees also. Either 4th and 5th matched the result 
+							obtained by the first polynomial, what is not on their favour, as computationally more demanding.</p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, degree=4))</i></center></p>
+							<p><center><i>classifier = OneVsRestClassifier(svm.SVC(kernel="poly", probability=True, random_state=random_state, degree=5))</i></center></p>
+							<img src="images/ms/v2.3.png" alt="" />	<img src="images/ms/v2.4.png" alt="" />	
+							<p>To summarize this part, from many tested variants, the most optimal kernel type for the task is 3rd degree polynomial.</p>
+							<p></p>
+							<p>Second part of the task was to analyze the behaviour of R^2</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+
+
+							<ul class="copyright">
+								<li>&copy; Mateusz Niewczas portfolio. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
