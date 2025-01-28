@@ -52,22 +52,22 @@
               <h2>From Data to Decisions: Exploring Airbnb Market Dynamics in New York City</h2>
 							<p><i>Authors: Natali Nikolić, Nima Osman, Paulina Matkowska, Panagiotis , Mateusz Niewczas.</i></p>
 
-<p>Introduction:
-The Airbnb NYC dataset provides comprehensive information about Airbnb listings in New York City for 2019, covering variables such as neighbourhoods, property types, pricing, availability, host details, and customer reviews. This rich dataset is valuable for analysing market trends, customer preferences, and short-term rental dynamics in one of the world's most competitive markets. It aids Airbnb in data-driven decision-making to optimise pricing, identify high-performing neighbourhoods, and improve resource allocation.
+<p>Introduction:</p>
+<p>The Airbnb NYC dataset provides comprehensive information about Airbnb listings in New York City for 2019, covering variables such as neighbourhoods, property types, pricing, availability, host details, and customer reviews. This rich dataset is valuable for analysing market trends, customer preferences, and short-term rental dynamics in one of the world's most competitive markets. It aids Airbnb in data-driven decision-making to optimise pricing, identify high-performing neighbourhoods, and improve resource allocation.
 By analysing customer demand trends and host behaviour, Airbnb can enhance customer experiences, refine marketing efforts, and uncover growth opportunities in underutilised areas. 
-<h3>1.1 Objective:</h3>
+<p></p><h3>1.1 Objective:</h3>
 Utilising the Airbnb NYC dataset and machine learning models to predict growth trends in Airbnb listings and average pricing for 2019.
 
 Methodology:
 
-<h3>2.1. Methodology Overview</h3>
-<p></p>This study used a systematic approach, combining data cleaning, exploratory data analysis (EDA), and predictive modelling. Python was the primary tool with libraries for data manipulation, visualisation, and machine learning.
-<h3>2.2 Data Collection and Preprocessing</h3>
-<p></p>The dataset was sourced from a publicly available Airbnb repository. Key variables included room_type, price, latitude, longitude, and number_of_reviews. 
+<p></p><h3>2.1. Methodology Overview</h3>
+This study used a systematic approach, combining data cleaning, exploratory data analysis (EDA), and predictive modelling. Python was the primary tool with libraries for data manipulation, visualisation, and machine learning.
+<p></p><h3>2.2 Data Collection and Preprocessing</h3>
+The dataset was sourced from a publicly available Airbnb repository. Key variables included room_type, price, latitude, longitude, and number_of_reviews. 
 
 <p></p>The preprocessing phase focused on data cleaning to address inconsistencies and missing entries. Null values were imputed, missing categorical data was replaced or flagged, and outliers and faulty data were removed. These steps were applied to all numerical columns. 
-<h3>2.3 Exploratory Data Analysis (EDA)</h3>
-<p></p>EDA uncovered patterns and relationships within the dataset. Statistical summaries provided an overview of key metrics, while visualisations such as histograms, scatterplots, and box plots highlighted trends and anomalies. The distributions of numerical variables, including price and availability, were examined in detail, while scatterplots of latitude and longitude revealed spatial trends. Additionally, categorical analysis explored room type distributions, and host behaviour. Likewise, all numerical columns were cleansed of outliers and faulty data.
+<p></p><h3>2.3 Exploratory Data Analysis (EDA)</h3>
+EDA uncovered patterns and relationships within the dataset. Statistical summaries provided an overview of key metrics, while visualisations such as histograms, scatterplots, and box plots highlighted trends and anomalies. The distributions of numerical variables, including price and availability, were examined in detail, while scatterplots of latitude and longitude revealed spatial trends. Additionally, categorical analysis explored room type distributions, and host behaviour. Likewise, all numerical columns were cleansed of outliers and faulty data.
 <h3>2.4 Analytical and Modelling Techniques</h3>
 <p></p>Key analytical methods included outlier detection with box plots, trend analysis using correlation coefficients, and neighbourhood grouping for average prices. These techniques helped identify premium and affordable areas while providing insights into market dynamics. The 2019 dataset, with the highest number of properties, contained both active and inactive listings. Historical data (2011–2018) on inactive properties guided a polynomial model, optimised with RMSE, to predict inactive properties in 2019. Subtracting these predictions from total listings refined the dataset. Feature engineering used Scikit-learn’s PolynomialFeatures, and performance was evaluated using MAE, MSE, and R².
 </p>             
